@@ -84,25 +84,10 @@ int main() {
 
 	while (note[i] != -2 && i < NBMAXNOTES) 
 	{
-		if ((i+1) < 10 && note[i] >= 10)
-		{
-			printf("| %d       | %0.2f       |\n", i+1, note[i]);
-		}
-		if ((i + 1) >= 10 && note[i] >= 10)
-		{
-			printf("| %d      | %0.2f       |\n", i+1, note[i]);
-		}
-		if ((i + 1) < 10 && note[i] < 10)
-		{
-			printf("| %d       | %0.2f        |\n", i+1, note[i]);
-		}
-		if ((i + 1) >= 10 && note[i] < 10)
-		{
-			printf("| %d      | %0.2f        |\n", i+1, note[i]);
-		}
+		printf("| %-7d | %-11.2f |\n", i + 1, note[i]);
 		i += 1;
-
 	}
+
 
 	float copieNote[NBMAXNOTES];
 	for (size_t i = 0; i < NBMAXNOTES; i++) { copieNote[i] = note[i]; }
@@ -142,30 +127,7 @@ int main() {
 	printf("|-------|---------|-------------|\n");
 	while (note[i] != -2 && i < NBMAXNOTES)
 	{
-		if ((i + 1) < 10)
-		{
-			printf("| %d     ", i + 1);
-		}
-		else
-		{
-			printf("| %d    ", i + 1);
-		}
-		if ((indexNote[i] + 1) < 10)
-		{
-			printf("| %d       ", indexNote[i] + 1);
-		}
-		else
-		{
-			printf("| %d      ", indexNote[i] + 1);
-		}
-		if (copieNote[i] < 10)
-		{
-			printf("| %0.2f        |\n", copieNote[i]);
-		}
-		else
-		{
-			printf("| %0.2f       |\n", copieNote[i]);
-		}
+		printf("| %-5d | %-7d | %-11.2f |\n", i + 1, indexNote[i] + 1, copieNote[i]);
 		i += 1;
 	}
 
